@@ -1,0 +1,118 @@
+<!--
+//*****************************************************************************************
+// Contents Framework : Servie - Robot Avatar Part.
+//                      Date : 2016.02.02
+//
+//    (1)
+//          User Change : [Step 1]
+//					      [Step 2]
+//*****************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html" charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+<style>
+<!--
+body {margin:0;padding:0;}
+#visible
+{
+overflow: hidden;
+}
+-->
+
+</style>
+
+<!-- 기본으로 포함되어야 하는 js -->
+<script language="JavaScript" type="text/javascript" src="../../Scripts/FlashPlayer.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/BaseCommand.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/BaseEvent.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/LogConsole.js"></script>
+
+<!-- 추가적으로 포함되는 js -->
+<!--<script language="JavaScript" type="text/javascript" src="Sarcomere.js"></script>-->
+<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
+<script src="jquery-code-scanner.js"></script>
+<script src="badgescanning.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+$(function () {
+    $('#code-scan').codeScanner();
+    var bar_code = $("#bar_code"); 
+    $("#panel2").hide();
+});			
+//SetVolume(0.8);
+
+
+function Setting() {
+		location.href = "../../Config/Config.htm";
+}
+
+
+</script>
+<link href="../../css/Setting.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Language.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="" id="visible" bgcolor="black" onbeforeunload="" style="padding: 0; margin: 0; width: 1080px; height: 1920px;">
+<div class="header">
+		<div class="settingsection" align="left"><a href="#" onclick="GoHome()"><img src="../../Image/home-5-xxl.png"
+			width="80" style="position: absolute; left: 20px; top: 20px" ></a>
+		</div>
+		<div class="logo">
+			<div class="logo-text" style="text-align: center;">Welcome to the Amgen Medical Affairs Cardiovascular Exhibit</div>
+		</div>
+</div>
+<div class="main">
+
+		<div class="contents" style="height:1100px;background-color: white;">
+			<div class="badgescanning" style="float: right;">
+				<h1 style="color: #034671;position: relative;right: 100px;font-size: 63px;"> Scan your badge here</h1>
+
+				<img src="scanbadge.png">
+			</div>
+			<div id="panel2" style="text-align: center;padding-top: 200px;">
+				<h1 style="color: #034671;font-size: 63px;" >Thank You</h1>
+		
+				<div class="settingsection2" align="center">
+					<a href="#" onclick="GoHome()"><img src="../../Image/home-5-xxl.png" width="80" style="" ></a>
+				</div>
+				<p>Go back to Home Screen</p>
+			</div>
+			<div id="slider" style="text-align: center; position: relative;top: -100px;z-index: -1;">
+			 
+			    <form class="">
+            		<div >
+                		<label class="" for="code-scan"></label>
+		                <div class="" style="z-index:-1;">
+        		            <textarea id="bar_code" style="z-index:-1;" >200003$AHSS1117$Tamour$Ashfaq$ARS$</textarea>
+        		            <button id="submit" class="submit">Click</button>
+                		</div>
+            		</div>
+        		</form>
+			</div>
+		</div>
+	</div>
+	<div class=" footer" style="">
+		<div class="footer-1" style="">
+			<!--<img style="position:absolute:right:0;" src="../../Images/button-footer.png" width="100" onclick="FC_ContentsCall('Quiz', strLang)" >
+			<p>Touch here </br>to begin</p>
+			
+			<img src="../../Images/button-footer.png" width="100" onclick="FC_ContentsCall('InformationRequest', '')" >
+			<p>Touch here </br>to receive more information </p>
+		</div>-->
+					
+		<div class="footer-3">
+			<img src="../../Image/AmgCardio_White.png" width="450" onclick="Setting()">
+						
+	        <p>© 2017 Amgen Inc. All rights reserved. USA-CCF-043983(2)</p>
+		</div>
+	</div>
+</body>
+
+
+</html>

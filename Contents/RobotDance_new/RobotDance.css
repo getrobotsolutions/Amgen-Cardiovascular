@@ -1,0 +1,60 @@
+body {
+	bgcolor: black;
+	overflow: hidden;
+	background-image: url('Image/Dance_bg.png');
+	background-repeat: no-repeat;
+}
+
+div {
+	margin: 0;
+	padding: 0;
+}
+
+.home {
+	text-align: right;
+	height: 100px;
+	padding: 25px;
+}
+
+.view {
+	float: left;	
+}
+
+
+.select {
+	height: 154px;
+}
+
+.list {
+	margin-top: -152px;
+	height: 156px;
+}
+
+.main {
+	margin-top: 50px;
+	width: 600px;
+	text-align: center;
+	float: left;
+}
+
+.before {
+	margin-top: 50px;
+	width: 200px;
+	float: left;
+}
+
+.play {
+	width: 200px;
+	float: left;
+}
+
+.next {
+	margin-top: 50px;
+	width: 200px;
+	float: left;
+}
+
+.album{
+	margin-left:20px;
+	float: left;
+}

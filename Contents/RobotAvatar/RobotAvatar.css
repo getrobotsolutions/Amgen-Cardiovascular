@@ -1,0 +1,73 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.home {
+	text-align: right;
+	width: 1020px;
+	height : 100px;
+	padding: 25px;
+	position: absolute;
+	height: 100px;
+}
+
+.bg {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 300px;
+}
+.bg img{
+	width: 1080px;
+}
+
+
+.canvas {
+	position: absolute;
+	left: 145px;
+	top: 401px;
+}
+
+.frame {
+	position: absolute;
+	left: 215px;
+	top: 411px;
+}
+
+#frame {
+	/* display: none; */
+	width: 280px;
+	
+}
+
+.number {
+	position: absolute;
+	left: 370px;
+	top: 590px;
+}
+
+#number {
+	/* display: none; */
+	
+}
+
+.shot {
+	position: absolute;
+	left: 275px;
+	top: 491px;
+}
+.shot img{
+	width: 280px;
+}
+
+
+.delete {
+	position: absolute;
+	right: 10px;
+	top: 880px;
+}
+.delete img{
+	width: 250px;
+}

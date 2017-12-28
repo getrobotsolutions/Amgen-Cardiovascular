@@ -1,0 +1,94 @@
+﻿<!--
+//*****************************************************************************************
+// Contents Framework : Service - Human Follow Part.
+//                      Date : 2016.11.14
+//
+//    (1)
+//          User Change : [Step 1]
+//					      [Step 2]
+//*****************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html" charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+<link rel="stylesheet" type="text/css" href="RobotDance.css" />
+
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.view {
+	margin-top: 17px;
+	width: 430px;
+	height: 1030px;
+	overflow: hidden;
+}
+
+.scrollBlind {
+	width: 460px;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+ul {
+	width: 430px;
+}
+
+li {
+	height: 152px;
+	line-height: 0px;
+	text-align: center;
+}
+
+</style>
+
+<!-- 기본으로 포함되어야 하는 js -->
+<script language="JavaScript" type="text/javascript"
+	src="../../Scripts/FlashPlayer.js"></script>
+<script language="JavaScript" type="text/javascript"
+	src="../../Scripts/BaseCommand.js"></script>
+<script language="JavaScript" type="text/javascript"
+	src="../../Scripts/BaseEvent.js"></script>
+<script language="JavaScript" type="text/javascript"
+	src="../../Scripts/LogConsole.js"></script>
+
+<!-- 추가적으로 포함되는 js -->
+<script language="JavaScript" type="text/javascript"
+	src="RobotDance.js"></script>
+</head>
+
+<body onload="JSMain()" onbeforeunload="JSUnload()">
+
+	<div class="home">
+		<img src="Image/Home_Button.png" onclick="Home()">
+	</div>
+
+	
+
+
+	<div class="main">
+		<!--<div class="before">
+			<img src="Image/Dance_before_press.png" onclick="dance_num(0)">
+		</div>-->
+		<div class="play">
+			<img id="play" src="Image/Dance_play.png" onclick="dance()">			
+		</div>
+		
+		<!--<div class="next">
+			<img src="Image/Dance_next_press.png" onclick="dance_num(1)">
+		</div>-->
+	</div>
+	
+	<div class="album">
+		<img id="album" src="Image/cover_The-lazy-song.png">
+	</div>
+	
+</body>
+</html>

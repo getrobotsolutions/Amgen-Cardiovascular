@@ -1,0 +1,158 @@
+﻿<!--
+//*****************************************************************************************
+// Contents Framework : Servie - Robot Avatar Part.
+//                      Date : 2014.11.03
+//
+//    (1) 
+//          User Change : [Step 1] 
+//					      [Step 2] 
+//*****************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html" charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+<style>
+@font-face {
+    font-family: myFirstFont;
+    src: url('../../css/Fonts/MyriadPro-Bold.otf');
+}
+body {margin:0;padding:0;font-family: myFirstFont;}
+#visible
+{
+overflow: hidden; 
+}
+
+</style>
+
+<!-- 기본으로 포함되어야 하는 js -->
+<script language="JavaScript" type="text/javascript" src="../../Scripts/FlashPlayer.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/BaseCommand.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/BaseEvent.js"></script>
+
+<!-- 추가적으로 포함되는 js -->
+<script language="JavaScript" type="text/javascript" src="RobotAvatar.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+	
+function JSMain()
+{
+}
+function Setting() {
+		location.href = "../../Config/Config.htm";
+	}
+//--------------------------------------------------------------------------
+//-- Flash -> html : Flash에서 선택한 Movie를 html에서 Play 
+//--------------------------------------------------------------------------
+/*
+function FC_ChangeAdMovieHtml(strIdx)
+{
+	var movieObj = document.getElementById('MediaPlayer');
+	if(strIdx == "1") movieObj.src = "../../Movie/main1.mp4";
+	if(strIdx == "2") movieObj.src = "../../Movie/main2.mp4";
+	if(strIdx == "3") movieObj.src = "../../Movie/main3.mp4";
+	if(strIdx == "4") movieObj.src = "../../Movie/main4.mp4";
+	movieObj.paly();
+}
+*/
+</script>
+<link href="../../css/Setting.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Language.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="JSMain()" id="visible" style="padding: 0; margin: 0; background-repeat: no-repeat; width: 1080px; height: 1920px; background-image: url('../../Image/Bkgrd2.jpg');background-size: cover;">
+
+<div class="header">
+		<div class="settingsection" align="left"><a href="#" onclick="GoHome()"><img src="../../Image/home-5-xxl.png"
+			width="80" style="position: absolute; left: 20px; top: 20px" ></a>
+		</div>
+</div>
+<div class="main">
+		
+		<div class="contents" style="">
+			<script language="JavaScript" type="text/javascript">
+				AC_FL_RunContent(
+					'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+					'width', '100%',
+					'height', '650',		// <-- FURO-S
+					'src', 'RobotAvatar',	// <-- 여기에 Flash 파일명을 적어주세요.
+					'quality', 'high',
+					'pluginspage', 'http://www.adobe.com/go/getflashplayer_kr',
+					'align', 'middle',
+					'play', 'true',
+					'loop', 'false',
+					'scale', 'showall',
+					'wmode', 'transparent',
+					'devicefont', 'false',
+					'id', 'App',
+					'bgcolor', '#ffffff',
+					'name', 'App',
+					'menu', 'false',
+					'allowFullScreen', 'false',
+					'allowScriptAccess','always',
+					'movie', 'RobotAvatar',	// <-- 여기에 Flash 파일명을 적어주세요.
+					'salign', 'top'
+					); //end AC code
+				</script>
+			</div>
+</div>
+
+
+			<div class=" footer" style="width: 1280px;">
+				<div class="footer-1" style="width:35%;color:white;float: left;padding-left: 30px;"	>
+					<h1 style="font-weight: bold;">LEADERBOARD</h1>
+						<p style="font-size:32px;font-weight:bold;" id="output">
+						</p>
+					</div>
+					<div class="footer-2" style="width:5%;float: left;"	>
+						<img src="../../Image/quizicon_icon.png" width="100" onclick="quiz_call('Quiz')">
+					</div>
+				
+					<div class="footer-3" style="width:48%;"	>
+							<img style="position: absolute;bottom: 239px; right: 20px;" src="../../Image/AmgCardio_White.png" style="/*position: absolute;bottom: 99px; /*right: 10px;*/" width="450" onclick="Setting()">
+					</br>
+					</br>
+	                	<p style="color:white;position: absolute;right: 30px;bottom: 189px;/*bottom: 49px;*/">2017 Amgen Inc. All rights reserved.   USA-CCF-043983(1)</p>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
+
+<script language="JavaScript" type="text/javascript">
+
+     if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("output").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("POST","http://www.tamoorkayani.com/show-results.php",true);
+        xmlhttp.send();
+</script>
+			
+</body>
+
+<!-- FURO-D 아래쪽 Movie 영역 
+<div>
+<video id="MediaPlayer" width="1080" height="720" autoplay="autoplay" loop>
+	<source src="" type="video/mp4" >
+</video>
+</div>
+-->
+</html>

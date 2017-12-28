@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	
+}
+
+div.main {
+	background-image: url("../Images/background-main.png");
+	background-repeat: no-repeat;
+	    height: 1100px;
+}
+
+div.settingsection {
+	height: 217px;
+	vertical-align: middle;
+	    width: 20%;
+    float: left;
+}
+
+div.setting {
+	padding: 46px;
+	height: 120px;
+	width: 150px;
+	height: 120px;
+}
+.header{height: 315px;width: 1080px;    background-color: #034671;}
+.footer{height: 505px;width: 1080px;    background-color: #034671;}
+.logo{color: white;font-size: 70px;width: 66%;float: left;margin-top: 50px;}
+.icons-text {
+    color: white;
+    font-size: 35px;
+    min-height: 168px;
+}
+
+.footer-1{width:1050px;color:white;float: left;padding: 30px 0 0 30px;}
+.footer-1 p{color: white;font-size: 30px; float: left;margin: 10px 10px 0 20px;
+    font-weight: normal;
+}
+.footer-1 img{float: left;}
+.footer-3 img{position: absolute;bottom: 130px; right: 20px;}
+.footer-3{width:48%;}
+.footer-3 p{color:white;position: absolute;right: 30px;bottom: 59px;}

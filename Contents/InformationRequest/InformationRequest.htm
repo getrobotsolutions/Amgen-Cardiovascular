@@ -1,0 +1,230 @@
+<!--
+//*****************************************************************************************
+// Contents Framework : Servie - Robot Avatar Part.
+//                      Date : 2016.02.02
+//
+//    (1)
+//          User Change : [Step 1]
+//					      [Step 2]
+//*****************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html" charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+<style>
+<!--
+body {margin:0;padding:0;}
+#visible
+{
+overflow: hidden;
+}
+-->
+
+</style>
+
+<!-- 기본으로 포함되어야 하는 js -->
+<script language="JavaScript" type="text/javascript" src="../../Scripts/FlashPlayer.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/BaseCommand.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/BaseEvent.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../Scripts/LogConsole.js"></script>
+
+<!-- 추가적으로 포함되는 js -->
+<!--<script language="JavaScript" type="text/javascript" src="Sarcomere.js"></script>-->
+<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
+<script src="jquery-code-scanner.js"></script>
+<script src="InformationRequest.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+	if (readCookie('BadgeNumber')==null){
+		alert("You will have to scan your badge First. Click Okay to get started.");
+		location.href = "../BadgeScanning/BadgeScanning.htm";
+	}
+$(function () {
+    //$('#code-scan').codeScanner();
+    //var bar_code = $("#bar_code"); 
+    $("#panel2").hide();
+    //$('#clicked').click(function() {
+    	//alert(bar_code.val());
+    //});
+    //if(bar_code){          
+    	
+	//}
+	$("#btn").click(function(){
+		/*var myCheckboxes = new Array();
+        $("input:checked").each(function() {
+           myCheckboxes.push($(this).val());
+        });*/
+        var info1=0;
+        var info2=0;
+        var info3=0;
+        var i1=document.getElementById("q1");
+        if ($("#qa").is(":checked"))
+		{
+			info1=1;
+		}
+		var ischecked=$("#qb").is(":checked");
+		if (ischecked)
+		{
+			alert("checked 2");
+			info2=1;
+		}
+		if ($("#qc").is(":checked"))
+		{
+			info3=1;
+		}
+
+        	var bno=12345;
+        	//myCheckboxes=myCheckboxes.toString();
+        var request={'BadgeNumber':bno,'Info1':info1, 'Info2': info2, 'Info3': info3}
+        $.ajax({	
+				url:"https://robotaisolutions.com/amgen/infoRequestApi.php",
+				type:"post",
+				data:request,
+				success : function (data) { 
+         		 alert("success");
+
+         		 $("#myForm").hide();
+         		 $("#btn").hide();
+         		 $("#panel2").show();
+				}
+		});
+
+	});
+
+});			
+SetVolume(0.8);
+
+
+function Setting() {
+		location.href = "../../Config/Config.htm";
+	}
+if (readCookie('BadgeNumber')!=null) {
+	var pageId=7;
+	UpdateSession(pageId);
+}
+function FC_ContentsCall(strContentsName, strLanguage)
+{
+	
+	if(strContentsName == "BadgeScanning")   
+	{	
+		location.href = "../BadgeScanning/BadgeScanning.htm";
+	}
+	if(strContentsName == "InformationRequest")   
+	{
+		
+		location.href = "../InformationRequest/InformationRequest.htm";
+	}
+}
+</script>
+<link href="../../css/Setting.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Language.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Main.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+	#myForm{
+		    padding: 20px 50px;
+    font-size: 40px;
+	}
+	input[type=checkbox]{
+		    /*transform: scale(1.5);*/
+		    width: 50px;
+		    height: 50px;
+	}
+	.left_col{    padding-top: 7px;width: 65px;
+    float: left;
+    height: 89px;}
+    #q1,#q2,#q3{height: 98px;}
+    #btn{
+    	    margin: auto;
+    background-color: #1da7e6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 30px;
+    }
+</style>
+</head>
+
+<body onload="" id="visible" bgcolor="black" onbeforeunload="" style="padding: 0; margin: 0; width: 1080px; height: 1920px;">
+<div class="header">
+		<div class="settingsection" align="left"><a href="#" onclick="GoHome()"><img src="../../Image/home-5-xxl.png"
+			width="80" style="position: absolute; left: 20px; top: 20px" ></a>
+		</div>
+		<div class="logo">
+			<div class="logo-text" style="text-align: center;">Welcome to the Amgen Medical Affairs Cardiovascular Exhibit</div>
+		</div>
+</div>
+<div class="main" style="padding-top: 4px;">
+
+		<div class="contents" style="height:1100px;background-color: white;">
+
+			<h1 style="color: #ffffff;font-size: 50px; margin: 0; padding: 18px 0;background-color: #1c354e;">Information Request</h1>
+			<div class="quiz" style="height600px;padding:100px 100px 200px 100px;;background-color: white;text-align: left;font-size: 30px;">
+			<form id="myForm" action="https://robotaisolutions.com/amgen/infoRequestApi.php" method="POST">
+			
+			
+			<div id="q1">
+				<div class="left_col"><input type="checkbox" id="qa" name="q1" value="1"></div>
+				<div class="right_col"><label> Clinical Inertia of Dyslipidemia in Clinical ASCVD</label></div>
+				 
+					
+			</div>
+			<div id="q2">
+				<div class="left_col"><input type="checkbox" id="qb" name="q2" value="1"></div>
+				<div class="right_col"> <label> Therapeutic Inertia of CVD</label></div>
+					
+			</div>
+			<div id="q3">
+				<div class="left_col"><input type="checkbox" id="qc" name="q3" value="1"></div>
+				<div class="right_col"> <label> Heart Failure MOD</label></div>
+					
+					
+			</div>
+			
+				
+			</form>
+		<div style="text-align: center;"><button onclick="" id="btn">Submit</button></div>
+			<div id="panel2" style="text-align: center;padding-top: 200px;">
+				<h1 style="color: #034671;font-size: 63px;" >Thank You</h1>
+		
+				<div class="settingsection2" align="center">
+					<a href="#" onclick="GoHome()"><img src="../../Image/home-5-xxl.png" width="80" style="" ></a>
+				</div>
+				<p>Go back to Home Screen</p>
+			</div>
+			<div id="slider" style="text-align: center; position: relative;top: -100px;z-index: -1;">
+			 
+			    <form class="">
+            		<div >
+                		<label class="" for="code-scan"></label>
+		                <div class="" style="z-index:-1;">
+        		            <textarea id="bar_code" style="z-index:-1;" ></textarea>
+        		            <button id="submit" class="submit">Click</button>
+                		</div>
+            		</div>
+        		</form>
+			</div>
+		</div>
+	</div>
+	<div class=" footer" style="">
+		<div class="footer-1" style="">
+			<img style="position:absolute:right:0;" src="../../Images/button-footer.png" width="100" onclick="FC_ContentsCall('BadgeScanning', '')" >
+			<p>Touch here </br>to begin</p>
+			
+			<img src="../../Images/button-footer.png" width="100" onclick="FC_ContentsCall('InformationRequest', '')" >
+			<p>Touch here </br>to receive more information </p>
+		</div>
+					
+		<div class="footer-3">
+			<img src="../../Image/AmgCardio_White.png" width="450" onclick="Setting()">
+						
+	        <p>© 2017 Amgen Inc. All rights reserved. USA-CCF-043983(2)</p>
+		</div>
+	</div>
+</body>
+
+
+</html>

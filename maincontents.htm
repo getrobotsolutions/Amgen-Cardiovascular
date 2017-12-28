@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html" charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+
+<script language="JavaScript" type="text/javascript"
+	src="Scripts/FlashPlayer.js"></script>
+<script language="JavaScript" type="text/javascript"
+	src="Scripts/BaseCommand.js"></script>
+<script language="JavaScript" type="text/javascript"
+	src="Scripts/BaseEvent.js"></script>
+<script language="JavaScript" type="text/javascript"
+	src="Scripts/LogConsole.js"></script>
+
+
+<script language="JavaScript" type="text/javascript"
+	src="maincontents.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+	//window.external.StartFaceTracking(True);
+
+
+	var strLang;
+	strLang = "En";
+
+	function Setting() {
+		location.href = "Config/Config.htm";
+	}
+
+	function Robo() {
+		location.href = "Contetents/RObo.htm";
+	}
+    ChangeLanguage("english");
+	function ChangeLanguage(language) {
+		var lang = language;
+		var chlang;
+		if ((language == "Korean") || (language == "korean")
+				|| (language == "Kr") || (language == "kr")){
+			lang = "ko-kr";
+			chlang = "Kr";	}
+		if ((language == "English") || (language == "english")
+				|| (language == "En") || (language == "en")){
+			lang = "en-us";
+			chlang = "En";
+			}
+		if ((language == "Japanese") || (language == "japanese")
+				|| (language == "Jp") || (language == "jp")){
+			lang = "ja-jp";
+			chlang = "Jp";
+			}
+		if ((language == "Chinese") || (language == "chinese")
+				|| (language == "Cn") || (language == "cn")){
+			lang = "zh-cn";
+			chlang = "Cn";
+			}
+		g_language = language;
+		chlang
+		writeCookie('CurrentLanguage', chlang, 30);
+
+		window.external.ChangeLanguage(lang);
+	}
+	ChangeLanguage("En");
+
+	
+	function CurrentLanguage(strPara) {
+		switch (strPara) {
+		case 'ko-kr':
+			strLang = 'Kr';
+			ChangeKr();
+			break;
+
+		case 'en-us':
+			strLang = 'En';
+			ChangeEn();
+			break;
+
+		case 'ja-jp':
+			strLang = 'Jp';
+			ChangeJp();
+			break;
+
+		case 'zh-cn':
+			strLang = 'Cn';
+			ChangeCn();
+			break;
+		}
+
+	}
+
+	
+	function JSMain() {
+		//FC_ReadSelectedMovie(readCookie('CurrentMovie'));
+		CurrentLanguage(readCookie('CurrentLanguage'));
+	}
+
+	function JSUnload() {
+		//HideAdMovie();
+	}
+
+	
+</script>
+<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
+
+
+<style type="text/css">
+	.logo{color: white;font-size: 70px;width: 66%;float: left;margin-top: 50px;}
+</style>
+
+<link href="css/Setting.css" rel="stylesheet" type="text/css" />
+<link href="css/Language.css" rel="stylesheet" type="text/css" />
+<link href="css/Main.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body oncontextmenu="return false" onselectstart="return false"
+	ondragstart="return false"
+	style="padding: 0; margin: 0; background-repeat: no-repeat; width: 1080px; height: 1920px;"
+	scroll="no" onload="JSMain()" onbeforeunload="JSUnload()">
+
+	
+	<div class="header">
+		<div class="settingsection" align="left"><a href="#" onclick="GoHome()"><img src="Image/home-5-xxl.png"
+			width="80" style="position: absolute; left: 20px; top: 20px" ></a>
+		</div>
+		<div class="logo">
+			<div class="logo-text" style="text-align: center;">Welcome to the Amgen Medical Affairs Cardiovascular Exhibit</div>
+		</div>
+	</div>
+
+	<div class="main">
+	
+		
+		<div class="contents" style="">
+		
+			<table class="contents">
+				<tr style="">
+					
+
+					<td><img id="RD" width="300" src="Images\Button1.png"
+						onclick="FC_ContentsCall('InterpretingSummaries', '')">
+						<h2 class="icons-text">Clinical Inertia and LDL-C Levels in Atherosclerosis</h2></td>
+					<td><img id="RD" width="300" src="Images\Button2.png"
+						onclick="FC_ContentsCall('Cardiovascular', '')">
+						<h2 class="icons-text">Cardiovascular Disease: From Risk Factors to Clinical Discussions</h2></td>
+					<td><img id="RD" width="300" src="Images\Button3.png"
+						onclick="FC_ContentsCall('Sarcomere', '')">
+						<h2 class="icons-text">Decreased Contractility in HFrEF</h2></td>
+
+				</tr>
+			</table>
+			
+			<table class="contents">
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr>
+					
+					<td><img id="HF" width="300" src="Image\Robot_Avatar.png"
+						onclick="FC_ContentsCall('RobotAvatar', '')"></td>
+					<td><img id="PP" width="300" src="Image\PhotoPrinting_En.png"
+						onclick="FC_ContentsCall('PhotoPrinting', '')"></td>
+					<td><img id="VR" width="300" src="Image\Dance.png"
+						onclick="FC_ContentsCall('RobotDance', '')"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class=" footer" style="">
+		<div class="footer-1" style="">
+			<img style="position:absolute:right:0;" src="Images/button-footer.png" width="100" onclick="FC_ContentsCall('BadgeScanning', '')" >
+			<p>Touch here </br>to begin</p>
+			
+			<img src="Images/button-footer.png" width="100" onclick="FC_ContentsCall('InformationRequest', '')" >
+			<p>Touch here </br>to receive more information </p>
+
+		</div>
+					
+		<div class="footer-3">
+			<img src="Image/AmgCardio_White.png" width="450" onclick="Setting()">
+						
+	        <p>© 2017 Amgen Inc. All rights reserved. USA-CCF-043983(2)</p>
+		</div>
+		<div id="result"></div>
+	</div>
+<script type="text/javascript">
+	//eraseCookie('BadgeNumber');
+	if(readCookie('BadgeNumber')==null){
+		alert("cookie not set");
+	}
+	else{
+			alert(readCookie('BadgeNumber'));
+	}
+</script>
+</body>
+
+
+</html>
+
